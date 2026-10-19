@@ -245,26 +245,6 @@ export default function Navbar({
 
       </div>
 
-      {/* Mobile Category Quick Bar */}
-      <div className="md:hidden border-t border-neutral-300/80 px-3 py-1.5 flex items-center gap-1.5 overflow-x-auto no-scrollbar bg-[#D7C9E0]/70">
-        {CATEGORIES.map((cat) => {
-          const isActive = selectedCategory === cat.id;
-          return (
-            <button
-              key={cat.id}
-              onClick={() => handleCategorySelect(cat.id)}
-              className={`px-2.5 py-1 min-h-[30px] flex items-center text-[10px] uppercase tracking-wider whitespace-nowrap cursor-pointer transition-colors ${
-                isActive
-                  ? 'bg-black text-white font-semibold shadow-xs'
-                  : 'bg-white/80 text-neutral-800 border border-neutral-300 hover:border-black'
-              }`}
-            >
-              {cat.label}
-            </button>
-          );
-        })}
-      </div>
-
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-neutral-300 bg-[#DFD5E8] px-6 py-4 flex flex-col gap-1 text-xs uppercase tracking-wider text-neutral-800 animate-fadeIn">
