@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Colección de productos: catálogo e inventario
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Colección de configuraciones: banners, ubicación, whatsapp y tienda
+    match /settings/{settingId} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}

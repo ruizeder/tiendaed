@@ -1,0 +1,12 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Carpeta de fotos de prendas:
+    // - Lectura pública para que se vean en el catálogo y carrito
+    // - Subida habilitada para fotos de prendas
+    match /prendas/{allPaths=**} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}
